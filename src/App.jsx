@@ -6,13 +6,11 @@ import { OffSetProvider } from './context/Offset-context';
 
 function App() {
 	return (
-			<PokemonDataProvider>
-				<OffSetProvider>
-						<AppRoutes />
-				</OffSetProvider>
-			</PokemonDataProvider>
-		
-	
+		<PokemonDataProvider>
+			<OffSetProvider>
+				<AppRoutes />
+			</OffSetProvider>
+		</PokemonDataProvider>
 	);
 }
 export default App;

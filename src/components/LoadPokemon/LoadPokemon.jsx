@@ -4,13 +4,13 @@ import { Button } from '../Button/Button';
 import PokedexBody from '../PokedexBody/PokedexBody';
 import PokedexBackground from '../PokedexBackground/PokedexBackGround';
 import { useContext } from 'react';
-import {PokemonInfoContext } from '../../context/PokemonData-context';
+import { PokemonInfoContext } from '../../context/PokemonData-context';
 import { OffSetContext } from '../../context/Offset-context';
 const LoadPokemon = () => {
 	const [pokemonData, setPokemonData] = useState([]);
 	const [filteredPokemonData, setFilteredPokemonData] = useState([]);
 	const [storedPokemonData, setStoredPokemonData] = useState([]);
-	 const {offSet,setOffSet}  = useContext(OffSetContext)
+	const { offSet, setOffSet } = useContext(OffSetContext);
 	const refCounter = useRef(false);
 	const { setPokemonInfo } = useContext(PokemonInfoContext);
 
@@ -57,16 +57,12 @@ const LoadPokemon = () => {
 
 	useEffect(() => {
 		setStoredPokemonData((prev) => [...prev, ...filteredPokemonData]);
-		setPokemonInfo(filteredPokemonData);
+		setPokemonInfo((prev) => [...prev, ...filteredPokemonData]);
 	}, [filteredPokemonData]);
 
 	console.log(pokemonData);
-	
-	return (
-		<PokedexBody>
-			
-		</PokedexBody>
-	);
+
+	return <PokedexBody></PokedexBody>;
 };
 
 export default LoadPokemon;
