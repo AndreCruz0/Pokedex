@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '../Button/Button';
 import PokedexBody from '../PokedexBody/PokedexBody';
-import PokedexBackground from '../PokedexBackground/PokedexBackGround';
 import { useContext } from 'react';
 import { PokemonInfoContext } from '../../context/PokemonData-context';
 import { OffSetContext } from '../../context/Offset-context';
@@ -54,15 +51,11 @@ const LoadPokemon = () => {
 		});
 		setFilteredPokemonData(pokemonFiltred);
 	}, [pokemonData]);
-
 	useEffect(() => {
 		setStoredPokemonData((prev) => [...prev, ...filteredPokemonData]);
 		setPokemonInfo((prev) => [...prev, ...filteredPokemonData]);
 	}, [filteredPokemonData]);
-
-	console.log(pokemonData);
-
-	return <PokedexBody></PokedexBody>;
+	return <PokedexBody> </PokedexBody>;
 };
 
 export default LoadPokemon;
