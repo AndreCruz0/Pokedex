@@ -8,7 +8,7 @@ export default function PokedexBackground() {
 				<div className="bg-red-700 w-8 rounded-full border-black  border-3">
 					.
 				</div>
-				<div className=""></div>
+				
 			</div>
 		</section>
 	);
