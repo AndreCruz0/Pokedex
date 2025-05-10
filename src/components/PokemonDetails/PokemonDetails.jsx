@@ -36,7 +36,7 @@ const PokemonDetails = () => {
 		setMoveDetails(data);
 		setSelectedMove(data.name);
 	}
-
+	
 	return (
 		<div className="flex flex-col items-center justify-center p-8 bg-gray-100 rounded-2xl shadow-lg max-w-md mx-auto mt-10">
 			<LoadPokemonDetails />

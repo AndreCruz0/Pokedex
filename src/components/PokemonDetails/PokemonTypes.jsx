@@ -3,7 +3,7 @@ export const PokemonTypes = ({ types , typeColors }) => {
 
 	return (
 		<div className="flex flex-wrap justify-center gap-2">
-			<h2 className="text-xl font-bold text-gray-700 mb-2">Tipo</h2>
+			
 			{types?.map((typeObj, key) => {
 				const typeName = typeObj.type.name;
 				const colorClass = typeColors[typeName] || 'bg-gray-300 text-gray-900';

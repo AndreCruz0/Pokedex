@@ -46,12 +46,7 @@ const PokemonDetails = () => {
     setSelectedMove(null);
     setMoveDetails(null);
   };
-  // essa função serve para ao clicar esc fechar modal
-  const handleKeyDown = (event) => {
-    if (event.key === 'Escape') {
-      handleCloseModal();
-    }
-  };
+
 
 
   return (
@@ -65,23 +60,18 @@ const PokemonDetails = () => {
             abilities={details.pokemonAbilitiesName} 
             abilitiesDesc={details.pokemonAbilitiesDesc} 
           />
-          <PokemonMoves 
+           <h2 className="text-xl font-bold text-gray-700 mb-2">Movimentos</h2>
+                   <PokemonMoves 
             moves={details.pokemonMove} 
-            onMoveClick={fetchMoveDetails} 
+            onMoveClick={fetchMoveDetails}
           />
-
+          <h2 className="text-xl font-bold text-gray-700 mb-2">Tipo</h2>
           <PokemonTypes 
             types={details.pokemonType} 
             typeColors={typeColors} 
           />
 
-          <button
-            type="button"
-            onClick={() => navigate('/pokemon/sexo')}
-            className="mb-6 px-6 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
-          >
-            Ver Mais Movimentos
-          </button>
+         
 
           <button
             type="button"
@@ -95,7 +85,7 @@ const PokemonDetails = () => {
 
       {/* Modal for Move Details */}
       {selectedMove && moveDetails && (
-        <MoveModal moveDetails={moveDetails} onClose={handleCloseModal} OnHandleEscape={handleKeyDown}  />
+        <MoveModal moveDetails={moveDetails} onClose={handleCloseModal}   />
       )}
     </div>
   );
