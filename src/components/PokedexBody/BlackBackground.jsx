@@ -1,4 +1,4 @@
-import {ContainerPokemons} from '../ContainerPokemons/ContainerPokemons';
+import {ContainerPokemons} from './ContainerPokemons';
 
 export default function BlackBackground() {
 	return (

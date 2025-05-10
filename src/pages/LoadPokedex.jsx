@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import PokedexBody from '../PokedexBody/PokedexBody';
+import PokedexBody from '../components/PokedexBody/PokedexBody';
 import { useContext } from 'react';
-import { PokemonInfoContext } from '../../context/PokemonData-context';
-import { OffSetContext } from '../../context/Offset-context';
+import { PokemonInfoContext } from '../context/PokemonData-context';
+import { OffSetContext } from '../context/Offset-context';
 const LoadPokemon = () => {
 	const [pokemonData, setPokemonData] = useState([]);
 	const [filteredPokemonData, setFilteredPokemonData] = useState([]);
