@@ -1,26 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import PokedexBody from '../pages/PokedexBody';
+
 import { useContext } from 'react';
 import { PokemonInfoContext } from '../context/PokemonData-context';
 import { OffSetContext } from '../context/Offset-context';
-import { data } from 'react-router-dom';
-const LoadPokemon = () => {
+
+const LoadPokemon = ({}) => {
 	const [pokemonData, setPokemonData] = useState([]);
 	const [filteredPokemonData, setFilteredPokemonData] = useState([]);
 	const [storedPokemonData, setStoredPokemonData] = useState([]);
 	const { offSet, setOffSet } = useContext(OffSetContext);
-	
+
 	const refCounter = useRef(false);
 	const { setPokemonInfo } = useContext(PokemonInfoContext);
-	const fetchForSearch = async () => {
-		const response = await fetch(
-			"https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0",
-		);
-		return  await response.json();
-	}
 
-		
-	fetchForSearch();
 	const fetchData = async () => {
 		const response = await fetch(
 			`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offSet}`,

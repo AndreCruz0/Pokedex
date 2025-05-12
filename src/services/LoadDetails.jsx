@@ -15,6 +15,8 @@ const LoadPokemonDetails = () => {
 
 		return await res.json();
 	}
+	
+	
 	useEffect(() => {
 		async function pokemonsData() {
 			const pokemonsData = await fetchData();
