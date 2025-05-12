@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DetailsContext } from '../context/Details-context';
-import { PokemonHeader } from '../components/PokemonDetails/PokemonHeader'; 
-import LoadDetails from '../components/PokemonDetails/LoadDetails';  
-import { PokemonAbilities } from '../components/PokemonDetails/PokemonAbilities'; 
-import { PokemonMoves } from '../components/PokemonDetails/PokemonMoves'; 
-import { PokemonTypes } from '../components/PokemonDetails/PokemonTypes'; 
+import { PokemonHeader } from '../components/PokemonDetails/PokemonHeader';
+import LoadDetails from '../services/LoadDetails';
+import { PokemonAbilities } from '../components/PokemonDetails/PokemonAbilities';
+import { PokemonMoves } from '../components/PokemonDetails/PokemonMoves';
+import { PokemonTypes } from '../components/PokemonDetails/PokemonTypes';
 import { MoveModal } from '../components/PokemonDetails/MoveModal';
 
 const PokemonDetails = () => {
@@ -44,11 +44,11 @@ const PokemonDetails = () => {
 		setSelectedMove(null);
 		setMoveDetails(null);
 	};
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        handleCloseModal();
-      }
-    };
+	const handleKeyDown = (e) => {
+		if (e.key === 'Escape') {
+			handleCloseModal();
+		}
+	};
 	return (
 		<div className="flex flex-col items-center justify-center p-8 bg-gray-100 rounded-2xl shadow-lg max-w-md mx-auto mt-10">
 			{details && (
@@ -68,7 +68,7 @@ const PokemonDetails = () => {
 						onMoveClick={fetchMoveDetails}
 					/>
 					<h2 className="text-xl font-bold text-gray-700 mb-2">Tipo</h2>
-					<PokemonTypes types={details.pokemonType} typeColors={typeColors}  />
+					<PokemonTypes types={details.pokemonType} typeColors={typeColors} />
 
 					<button
 						type="button"
@@ -82,8 +82,11 @@ const PokemonDetails = () => {
 
 			{/* Modal for Move Details */}
 			{selectedMove && moveDetails && (
-				<MoveModal moveDetails={moveDetails} onClose={handleCloseModal}  handleKeyDown={handleKeyDown} />
-        
+				<MoveModal
+					moveDetails={moveDetails}
+					onClose={handleCloseModal}
+					handleKeyDown={handleKeyDown}
+				/>
 			)}
 		</div>
 	);

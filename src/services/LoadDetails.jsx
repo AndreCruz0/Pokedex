@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { DetailsContext } from '../../context/Details-context';
-
-import { PokemonInfoContext } from '../../context/PokemonData-context';
+import { DetailsContext } from '../context/Details-context';
 
 const LoadPokemonDetails = () => {
 	const [pokemonData, setPokemonData] = useState({});
