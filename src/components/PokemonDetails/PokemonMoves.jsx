@@ -6,6 +6,7 @@ export const PokemonMoves = ({ moves, onMoveClick }) => (
         key={key}
         className="bg-gray-200 text-gray-800 text-xs font-medium px-3 py-1 rounded-full capitalize cursor-pointer hover:bg-gray-300"
         onClick={() => onMoveClick(move.move.url)}
+        onKeyDown={() => onMoveClick(move.move.url)}
       >
         {move.move.name}
       </span>

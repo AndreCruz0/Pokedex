@@ -61,7 +61,6 @@ const PokemonDetails = () => {
 				</div>
 			)}
 
-			{/* Modal for Move Details */}
 			{selectedMove && moveDetails && (
 				<MoveModal
 					moveDetails={moveDetails}

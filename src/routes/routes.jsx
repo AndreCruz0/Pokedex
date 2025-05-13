@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LoadPokemon from '../services/LoadPokedex';
-import PokemonDetails from '../pages/PokemonDetails';
 import PokemonDetails2 from '../pages/PokemonDetails';
 import PokedexBody from '../pages/PokedexBody';
 export const AppRoutes = () => {

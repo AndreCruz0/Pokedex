@@ -19,9 +19,11 @@ export const MoveModal = ({ moveDetails, onClose , handleKeyDown}) => {
       <div
         className="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative"
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
       >
         <span
           onClick={onClose}
+          onKeyDown={onClose}
           className="absolute top-2 right-2 text-gray-500 hover:text-black text-lg cursor-pointer"
         >
           ✕
