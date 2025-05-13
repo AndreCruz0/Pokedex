@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { PokemonInfoContext } from '../context/PokemonData-context';
 import { OffSetContext } from '../context/Offset-context';
 
-const LoadPokemon = ({}) => {
+const LoadPokemon = () => {
 	const [pokemonData, setPokemonData] = useState([]);
 	const [filteredPokemonData, setFilteredPokemonData] = useState([]);
 	const [storedPokemonData, setStoredPokemonData] = useState([]);

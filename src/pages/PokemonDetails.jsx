@@ -7,33 +7,14 @@ import { PokemonAbilities } from '../components/PokemonDetails/PokemonAbilities'
 import { PokemonMoves } from '../components/PokemonDetails/PokemonMoves';
 import { PokemonTypes } from '../components/PokemonDetails/PokemonTypes';
 import { MoveModal } from '../components/PokemonDetails/MoveModal';
+import colors from "../assets/colors.json"
 
 const PokemonDetails = () => {
 	const navigate = useNavigate();
 	const { details } = useContext(DetailsContext);
 	const [selectedMove, setSelectedMove] = useState(null);
 	const [moveDetails, setMoveDetails] = useState(null);
-	console.log(details);
-	const typeColors = {
-		fire: 'bg-red-100 text-red-800',
-		water: 'bg-blue-100 text-blue-800',
-		grass: 'bg-green-100 text-green-800',
-		electric: 'bg-yellow-100 text-yellow-800',
-		psychic: 'bg-pink-100 text-pink-800',
-		normal: 'bg-gray-200 text-gray-800',
-		fighting: 'bg-orange-200 text-orange-800',
-		ground: 'bg-yellow-200 text-yellow-900',
-		rock: 'bg-yellow-300 text-yellow-900',
-		bug: 'bg-lime-100 text-lime-800',
-		ghost: 'bg-purple-200 text-purple-800',
-		steel: 'bg-gray-300 text-gray-900',
-		ice: 'bg-cyan-100 text-cyan-800',
-		dragon: 'bg-indigo-200 text-indigo-800',
-		dark: 'bg-gray-800 text-white',
-		fairy: 'bg-pink-200 text-pink-900',
-		poison: 'bg-purple-100 text-purple-800',
-		flying: 'bg-indigo-100 text-indigo-800',
-	};
+	const typeColors = colors
 	const fetchMoveDetails = async (moveUrl) => {
 		const res = await fetch(moveUrl);
 		const data = await res.json();
