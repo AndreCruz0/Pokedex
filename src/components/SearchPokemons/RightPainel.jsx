@@ -44,7 +44,6 @@ export default function RightPanel({
 				) : null}
 			</div>
 
-			{/* Botões */}
 			<div className="flex gap-1 mb-4 justify-end mr-6">
 				<div className="bg-black h-2 w-6 rounded-full" />
 				<div className="bg-black h-2 w-6 rounded-full" />
