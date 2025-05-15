@@ -4,17 +4,20 @@ import { PokemonDataProvider } from './context/PokemonData-context';
 import { OffSetProvider } from './context/Offset-context';
 import { DetailsProvider } from './context/Details-context';
 import { FIlterProvider } from './context/filter-context';
+import { SeacrhProvider } from './context/Search-context';
 
 function App() {
 	return (
 		<PokemonDataProvider>
-			<FIlterProvider>
-				<OffSetProvider>
-					<DetailsProvider>
-						<AppRoutes />
-					</DetailsProvider>
-				</OffSetProvider>
-			</FIlterProvider>
+			<SeacrhProvider>
+				<FIlterProvider>
+					<OffSetProvider>
+						<DetailsProvider>
+							<AppRoutes />
+						</DetailsProvider>
+					</OffSetProvider>
+				</FIlterProvider>
+			</SeacrhProvider>
 		</PokemonDataProvider>
 	);
 }
