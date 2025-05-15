@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ImageWithSkeleton from '../Skeleton/ImageWithSkeleton';
 
 export const PokemonHeader = ({ name, image, imageShiny }) => {
   const [showShiny, setShowShiny] = useState(false);
@@ -35,11 +36,10 @@ export const PokemonHeader = ({ name, image, imageShiny }) => {
         </button>
       </div>
 
-      <img
-        src={showShiny ? imageShiny : image}
+        <ImageWithSkeleton  src={showShiny ? imageShiny : image}
         alt={name}
-        className="w-52 h-52 object-contain transition-transform duration-300 hover:scale-105"
-      />
+        className={"w-52 h-52 object-contain transition-transform duration-300 hover:scale-105"}  width={250} />
+       
     </div>
   );
 };

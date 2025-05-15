@@ -1,3 +1,5 @@
+import ImageWithSkeleton from "../Skeleton/ImageWithSkeleton";
+
 export default function RightPanel({
 	isHidden,
 	filteredPokemons,
@@ -20,7 +22,8 @@ export default function RightPanel({
 								onClick={() => navigate(`/pokemon/${pokemon.name}`)}
 								onKeyDown={() => navigate(`/pokemon/${pokemon.name}`)}
 							>
-								<img src={pokemon.image} alt={pokemon.name} className="w-20 h-20 mx-auto" />
+								<ImageWithSkeleton src={pokemon.image} alt={pokemon.name} className={"w-20 h-20 mx-auto"} height={20} width={20}/>
+								
 								<h2 className="text-lg font-bold capitalize">{pokemon.name}</h2>
 								<div className="flex flex-wrap justify-center gap-1 mt-1">
 									{pokemon.types.map((type) => (
@@ -72,3 +75,6 @@ export default function RightPanel({
 		</section>
 	);
 }
+
+
+
