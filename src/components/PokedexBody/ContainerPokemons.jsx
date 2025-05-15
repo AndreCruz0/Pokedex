@@ -29,7 +29,7 @@ export function ContainerPokemons() {
 						onKeyDown={() => sendName(pokemonData.pokemonName)}
 						className="relative bg-white rounded-[10px] p-2 text-center shadow-md border border-[#ddd] cursor-pointer transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
 					>
-						{/* Indicador visual sem imagem externa */}
+					
 						<div className="absolute top-[5px] left-[5px] w-[10px] h-[10px] bg-red-700 opacity-70 rounded-full" />
 
 						{pokemonData.pokemonImage ? (

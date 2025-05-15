@@ -1,4 +1,3 @@
-import {ContainerPokemons} from './ContainerPokemons';
 import  BlackBackground  from './GrayBackground';
 export default function PokedexBackGround() {
 	return (
