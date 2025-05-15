@@ -4,8 +4,6 @@ import { DetailsContext } from '../context/Details-context';
 
 const LoadPokemonDetails = () => {
 	const [pokemonData, setPokemonData] = useState({});
-	const [filteredPokemonData, setFilteredPokemonData] = useState(null);
-	const navigate = useNavigate();
 	const { pokemon } = useParams();
 
 	const { setDetails, details } = useContext(DetailsContext);
@@ -56,6 +54,7 @@ const LoadPokemonDetails = () => {
 				pokemonName: name,
 				pokemonMove: moves,
 				pokemonImage: sprites.front_default,
+				pokemonImageShiny: sprites.front_shiny,
 				pokemonType: types,
 			};
 			setDetails(formattedData);

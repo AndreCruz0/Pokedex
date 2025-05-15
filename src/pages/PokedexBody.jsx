@@ -26,7 +26,9 @@ export default function PokedexBody() {
 	}, [inputValue]);
 
 	return (
-		<main className="flex justify-center items-start gap-2 p-4">
+		<main className="flex sm:flex-row flex-col justify-center items-center gap-2 p-4 min-h-screen sm:items-start   ">
+			
+			
 			<LeftPanel setIsHidden={setIsHidden} isHidden={isHidden} />
 			<Hinge isHidden={isHidden} />
 			<RightPanel

@@ -9,7 +9,7 @@ export default function RightPanel({
 	if (isHidden) return null;
 
 	return (
-		<section className="bg-red-600 min-h-[40rem] p-6 rounded-r-4xl border-2 border-red-800 flex flex-col relative w-[26rem] shadow-md">
+		<section className="bg-red-600 min-h-[40rem] p-6 rounded-r-4xl border-2 border-red-800  flex flex-col relative w-[26rem] shadow-md">
 			<div className="bg-white h-52 w-full mb-4 rounded-md overflow-y-auto p-2">
 				{inputValue && filteredPokemons.length > 0 ? (
 					<div className="grid grid-cols-2 gap-4">

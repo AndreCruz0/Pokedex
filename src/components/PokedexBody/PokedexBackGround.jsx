@@ -1,18 +1,9 @@
-import BlackBackground from './BlackBackground';
-export default function PokedexBackground({ setIsHidden , isHidden }) {
+import {ContainerPokemons} from './ContainerPokemons';
+import  BlackBackground  from './GrayBackground';
+export default function PokedexBackGround() {
 	return (
-		<section className="bg-[#f2f2f2e3] max-w-125 mx-auto rounded-2xl min-h-110 p-1 rounded-bl-[100px] flex flex-col justify-evenly items-end">
+		<div className="bg-[#282828] rounded-3xl p-4 max-w-100 mx-auto mt-6   flex flex-col items-center  bg-gradient-to-b from-[#333333] to-[#222222] shadow-[inset_0_0_15px_rgba(0,0,0,0.5)] border-2 border-[#111]">
 			<BlackBackground />
-
-			<button
-				className="w-10 rounded-full border-black border-3"
-				onClick={() => isHidden ? setIsHidden(false) : setIsHidden(true)}
-				onKeyDown={() => isHidden ? setIsHidden(false) : setIsHidden(true)}
-				type="button"
-			>
-
-				<img src="/lupa.png" alt="Pesquisar" />
-			</button>
-		</section>
+		</div>
 	);
 }

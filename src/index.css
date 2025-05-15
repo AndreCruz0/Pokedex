@@ -1,1 +1,61 @@
-@import  'tailwindcss' ; /* ... */ @plugin 'tailwind-scrollbar' ;
+@import  'tailwindcss' ; /* ... */ 
+@plugin 'tailwind-scrollbar' ;
+
+
+@layer base {
+    .bgGradient {
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(145deg, #cc1515 0%, #e53935 100%);
+    }
+
+ 
+   
+  .text-pokedex {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .light {
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px; /* rounded-full */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .light-blue {
+    background: radial-gradient(circle at 30% 30%, #4fc3f7, #0288d1);
+    box-shadow: 0 0 10px #4fc3f7;
+    animation: pulsate 2s infinite;
+  }
+
+  .light-red {
+    background: radial-gradient(circle at 30% 30%, #ff8a80, #d50000);
+  }
+
+  .light-yellow {
+    background: radial-gradient(circle at 30% 30%, #ffee58, #ffd600);
+  }
+
+  .light-green {
+    background: radial-gradient(circle at 30% 30%, #b9f6ca, #00c853);
+  }
+
+  @keyframes pulsate {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  } 
+}
+  html{
+  min-width: 370px;
+}
+  

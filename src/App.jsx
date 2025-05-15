@@ -1,4 +1,3 @@
-import './app.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AppRoutes } from './routes/routes';
 import { PokemonDataProvider } from './context/PokemonData-context';

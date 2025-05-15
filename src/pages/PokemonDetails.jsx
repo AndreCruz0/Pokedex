@@ -37,6 +37,7 @@ const PokemonDetails = () => {
 					<PokemonHeader
 						name={details.pokemonName}
 						image={details.pokemonImage}
+						imageShiny={details.pokemonImageShiny}
 					/>
 					<LoadDetails />
 					<PokemonAbilities
@@ -60,7 +61,6 @@ const PokemonDetails = () => {
 					</button>
 				</div>
 			)}
-
 			{selectedMove && moveDetails && (
 				<MoveModal
 					moveDetails={moveDetails}
