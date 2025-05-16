@@ -4,7 +4,7 @@ import pokemonInfo from '../assets/pokemonInfo.json';
 import colors from '../assets/colors.json';
 import LeftPanel from '../components/SearchPokemons/leftPainel';
 import RightPanel from '../components/SearchPokemons/RightPainel';
-import Hinge from '../components/SearchPokemons/Hinge';
+
 import { useContext } from 'react';
 import { SearchContext } from '../context/Search-context';
 
@@ -14,27 +14,22 @@ export default function PokedexBody() {
 	const [isHidden, setIsHidden] = useState(true);
 	const navigate = useNavigate();
 	const { search } = useContext(SearchContext);
-	
-	
+
 	useEffect(() => {
 		setTimeout(() => {
 			const filtered = pokemonInfo.filter((pokemon) =>
 				search.length > 2
 					? pokemon.name.toLowerCase().includes(search.toLowerCase())
-					: false
+					: false,
 			);
 			setFilteredPokemons(filtered);
 		}, 1000);
-
-		
 	}, [search]);
 
 	return (
-		<main className="flex sm:flex-row flex-col justify-center items-center gap-2 p-4 min-h-screen sm:items-start   ">
-			
-			
+		<main className="flex sm:flex-row flex-col justify-center items-center gap-2 p-4 min-h-screen sm:items-start   bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#2a2a2a] text-white  ">
 			<LeftPanel setIsHidden={setIsHidden} isHidden={isHidden} />
-			<Hinge isHidden={isHidden} />
+
 			<RightPanel
 				isHidden={isHidden}
 				filteredPokemons={filteredPokemons}
