@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import pokemonInfo from '../assets/pokemonInfo.json';
 import colors from '../assets/colors.json';
-import LeftPanel from '../components/SearchPokemons/leftPainel';
-import RightPanel from '../components/SearchPokemons/RightPainel';
+import LeftPanel from '../components/LeftPainel.jsx/leftPainel';
+import RightPanel from '../components/RightPanel.jsx/RightPainel';
 
 import { useContext } from 'react';
 import { SearchContext } from '../context/Search-context';
