@@ -1,5 +1,5 @@
 import LoadPokemon from '../../services/LoadPokedex';
-import PokedexBackground from '../PokedexBody/PokedexBackGround';
+import PokedexBackground from './PokedexBackGround';
 import { useContext } from 'react';
 import HeaderSection from './HeaderSection';
 import DPadSection from './DPadSection';
