@@ -1,5 +1,6 @@
-export const PokemonMoves = ({ moves, onMoveClick }) => (
+export const PokemonMoves = ({ moves, onMoveClick }) =>  (
   <div className="flex flex-wrap justify-center gap-2 mb-6 max-h-40 overflow-y-auto  ">
+  
    
     {moves?.map((move, key) => (
       <span

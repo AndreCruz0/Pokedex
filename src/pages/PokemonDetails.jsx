@@ -30,10 +30,16 @@ const PokemonDetails = () => {
 			handleCloseModal();
 		}
 	};
+	const getMoveName = () => {
+		return  details.pokemonMove.map((move) => move.move.name);
+	}
+
+	
 	return (
 		<main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#2a2a2a] text-white">	
 			<div className="flex flex-col items-center justify-center p-8 bg-gray-100 rounded-2xl shadow-lg max-w-md mx-auto mt-10 ">
 			{details && (
+				
 				<div className="bg-white rounded-2xl shadow-md w-full p-6 text-center">
 					<PokemonHeader
 						name={details.pokemonName}
@@ -62,8 +68,9 @@ const PokemonDetails = () => {
 					</button>
 				</div>
 			)}
-			{selectedMove && moveDetails && (
+			{selectedMove && moveDetails &&(
 				<MoveModal
+					moveName={getMoveName}
 					moveDetails={moveDetails}
 					onClose={handleCloseModal}
 					handleKeyDown={handleKeyDown}

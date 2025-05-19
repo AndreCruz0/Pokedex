@@ -13,14 +13,6 @@ export default function ImageWithSkeleton({
   const [visible, setVisible] = useState(true);
   const [error, setError] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (loading) {
-        setVisible(false);
-      }
-    }, 15000);
-    return () => clearTimeout(timeout);
-  }, [loading]);
 
   const roundedClass = className
     .split(' ')

@@ -11,8 +11,6 @@ export default function RightPanel({
 	filteredPokemons,
 	inputValue,
 	setInputValue,
-	navigate,
-	typeColors,
 }) {
 	const [shouldRender, setShouldRender] = useState(!isHidden);
 	const [animationClass, setAnimationClass] = useState('flip-in-right');
@@ -40,8 +38,6 @@ export default function RightPanel({
 			<ResultsDisplay
 				filteredPokemons={filteredPokemons}
 				inputValue={inputValue}
-				navigate={navigate}
-				typeColors={typeColors}
 			/>
 			<SoundIndicators />
 			<ControlButtons />

@@ -1,16 +1,16 @@
 import LoadPokemon from '../../services/LoadPokedex';
 import PokedexBackground from '../PokedexBody/PokedexBackGround';
 import { useContext } from 'react';
-import { SearchContext } from '../../context/Search-context';
 import HeaderSection from './HeaderSection';
 import DPadSection from './DPadSection';
 import InputSection from './InputSection';
+import { InputValueContext } from '../../context/InputValue-context';
 
-export default function LeftPanel({ setIsHidden, isHidden }) {
-	const { setSearch, search } = useContext(SearchContext);
+export default function LeftPanel({ setIsHidden }) {
+	const { inputValue, setInputValue } = useContext(InputValueContext);
 
 	const handleInputChange = (e) => {
-		setSearch(e.target.value);
+		setInputValue(e.target.value);
 		e.target.value.length > 2 ? setIsHidden(false) : setIsHidden(true);
 	};
 
@@ -22,7 +22,7 @@ export default function LeftPanel({ setIsHidden, isHidden }) {
 
 			<div className="flex justify-between items-end mt-6">
 				<DPadSection />
-				<InputSection search={search} onChange={handleInputChange} />
+				<InputSection inputValue={inputValue} onChange={handleInputChange} />
 			</div>
 		</section>
 	);

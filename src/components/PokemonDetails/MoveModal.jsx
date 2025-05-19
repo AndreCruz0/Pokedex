@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 
-export const MoveModal = ({ moveDetails, onClose , handleKeyDown}) => {
+export const MoveModal = ({ moveDetails, onClose , handleKeyDown , }) => {
   const modalRef = useRef(null); 
+const moveNameFind = moveDetails?.names?.find((name) => name.language.name === "en");
+  const moveName = moveNameFind?.name || "Sem nome disponível";
 
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export const MoveModal = ({ moveDetails, onClose , handleKeyDown}) => {
         >
           ✕
         </span>
-        <h2 className="text-2xl font-bold capitalize mb-4">{moveDetails.name}</h2>
+        <h2 className="text-2xl font-bold capitalize mb-4 text-black">{moveName}</h2>
         <p className="text-gray-700 text-sm">
           {moveDetails.effect_entries?.[0]?.effect || 'Sem descrição disponível.'}
         </p>
