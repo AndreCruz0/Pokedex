@@ -12,8 +12,7 @@ export default function ImageWithSkeleton({
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(true);
   const [error, setError] = useState(false);
-
-
+  
   const roundedClass = className
     .split(' ')
     .filter((cls) => cls.startsWith('rounded'))

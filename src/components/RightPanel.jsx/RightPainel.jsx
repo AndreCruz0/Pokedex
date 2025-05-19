@@ -9,8 +9,6 @@ import FunctionPads from './FunctionsPads';
 export default function RightPanel({
 	isHidden,
 	filteredPokemons,
-	inputValue,
-	setInputValue,
 }) {
 	const [shouldRender, setShouldRender] = useState(!isHidden);
 	const [animationClass, setAnimationClass] = useState('flip-in-right');
@@ -34,10 +32,9 @@ export default function RightPanel({
 		>
 			<div className="absolute top-2 left-8 right-8 h-1 bg-gradient-to-r from-white/20 via-white/10 to-transparent rounded " />
 			<CylindricalHinge />
-			<InputSearch inputValue={inputValue} setInputValue={setInputValue} />
+			<InputSearch />
 			<ResultsDisplay
 				filteredPokemons={filteredPokemons}
-				inputValue={inputValue}
 			/>
 			<SoundIndicators />
 			<ControlButtons />

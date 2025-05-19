@@ -7,9 +7,7 @@ import { InputValueContext } from '../context/InputValue-context';
 export default function PokedexBody() {
 	const [filteredPokemons, setFilteredPokemons] = useState([]);
 	const [isHidden, setIsHidden] = useState(true);
-
 	const { inputValue } = useContext(InputValueContext);
-
 	useEffect(() => {
 		setTimeout(() => {
 			const filtered = pokemonInfo.filter((pokemon) =>
@@ -28,7 +26,6 @@ export default function PokedexBody() {
 			<RightPanel
 				isHidden={isHidden}
 				filteredPokemons={filteredPokemons}
-				inputValue={inputValue}
 			/>
 		</main>
 	);
