@@ -2,7 +2,7 @@
 import { PokemonDataProvider } from '../PokemonData-context';
 import { OffSetProvider } from '../Offset-context';
 import { DetailsProvider } from '../Details-context';
-import { FIlterProvider } from '../filter-context';
+import { FIlterProvider } from '../Filter-context';
 import { InputValueProvider } from '../InputValue-context';
 import { ThemeProvider } from '../Theme-context';
 
