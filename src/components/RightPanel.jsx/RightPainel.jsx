@@ -15,7 +15,7 @@ export default function RightPanel({ isHidden, filteredPokemons }) {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth <= 620);
 		};
-		
+
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);

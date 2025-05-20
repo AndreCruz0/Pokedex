@@ -12,87 +12,91 @@ import colors from '../assets/colors.json';
 import ButtonTheme from '../components/ButtonTheme/ButtonTheme';
 
 const PokemonDetails = () => {
-  const navigate = useNavigate();
-  const { details } = useContext(DetailsContext);
-  const { theme, setTheme } = useContext(ThemeContext);
-  const [selectedMove, setSelectedMove] = useState(null);
-  const [moveDetails, setMoveDetails] = useState(null);
+	const navigate = useNavigate();
+	const { details } = useContext(DetailsContext);
+	const { theme, setTheme } = useContext(ThemeContext);
+	const [selectedMove, setSelectedMove] = useState(null);
+	const [moveDetails, setMoveDetails] = useState(null);
 
-  const fetchMoveDetails = async (moveUrl) => {
-    const res = await fetch(moveUrl);
-    const data = await res.json();
-    setMoveDetails(data);
-    setSelectedMove(data.name);
-  };
+	const fetchMoveDetails = async (moveUrl) => {
+		const res = await fetch(moveUrl);
+		const data = await res.json();
+		setMoveDetails(data);
+		setSelectedMove(data.name);
+	};
 
-  const handleCloseModal = () => {
-    setSelectedMove(null);
-    setMoveDetails(null);
-  };
+	const handleCloseModal = () => {
+		setSelectedMove(null);
+		setMoveDetails(null);
+	};
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') {
-      handleCloseModal();
-    }
-  };
+	const handleKeyDown = (e) => {
+		if (e.key === 'Escape') {
+			handleCloseModal();
+		}
+	};
 
-  const getMoveName = () => {
-    return details.pokemonMove.map((move) => move.move.name);
-  };
+	const getMoveName = () => {
+		return details.pokemonMove.map((move) => move.move.name);
+	};
 
-  return (
-    <main
-      className={`flex flex-col items-center justify-center min-h-screen 
-      ${theme === 'dark'
-        ? 'bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#2a2a2a] text-white'
-        : 'bg-[#f5f5f5] text-black'}`}
-    >
-   
-      <ButtonTheme />
+	return (
+		<main
+			className={`flex flex-col items-center justify-center min-h-screen 
+      ${
+				theme === 'dark'
+					? 'bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#2a2a2a] text-white'
+					: 'bg-[#f5f5f5] text-black'
+			}`}
+		>
+			<div
+				className={`flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg max-w-md mx-auto mt-10
+	   
+        ${theme === 'dark' ? 'bg-white text-white' : 'bg-white text-black'}`}
+			>
+				<ButtonTheme />
+				{details && (
+					<div className="rounded-2xl shadow-md w-full p-6 text-center">
+						<PokemonHeader
+							name={details.pokemonName}
+							image={details.pokemonImage}
+							imageShiny={details.pokemonImageShiny}
+						/>
 
-      <div className={`flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg max-w-md mx-auto mt-10 
-        ${theme === 'dark' ? 'bg-white text-white' : 'bg-white text-black'}`}>
-        {details && (
-          <div className="rounded-2xl shadow-md w-full p-6 text-center">
-            <PokemonHeader
-              name={details.pokemonName}
-              image={details.pokemonImage}
-              imageShiny={details.pokemonImageShiny}
-            />
-            <LoadDetails />
-            <PokemonAbilities
-              abilities={details.pokemonAbilitiesName}
-              abilitiesDesc={details.pokemonAbilitiesDesc}
-            />
-            <h2 className="text-xl font-bold mb-2">Movimentos</h2>
-            <PokemonMoves
-              moves={details.pokemonMove}
-              onMoveClick={fetchMoveDetails}
-            />
-            <h2 className="text-xl font-bold mb-2">Tipo</h2>
-            <PokemonTypes types={details.pokemonType} typeColors={colors} />
+						<LoadDetails />
+						<PokemonAbilities
+							abilities={details.pokemonAbilitiesName}
+							abilitiesDesc={details.pokemonAbilitiesDesc}
+						/>
+						<h2 className="text-xl font-bold mb-2">Movimentos</h2>
+						<PokemonMoves
+							moves={details.pokemonMove}
+							onMoveClick={fetchMoveDetails}
+						/>
+						<h2 className="text-xl font-bold mb-2">Tipo</h2>
+						<PokemonTypes types={details.pokemonType} typeColors={colors} />
 
-            <button
-              type="button"
-              onClick={() => navigate('/')}
-              className="mt-6 px-6 py-2 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 shadow"
-            >
-              Voltar
-            </button>
-          </div>
-        )}
+						<button
+							type="button"
+							onClick={() => navigate('/')}
+							className="mt-6 px-6 py-2 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 shadow"
+						>
+							Voltar
+						</button>
+					</div>
+				)}
 
-        {selectedMove && moveDetails && (
-          <MoveModal
-            moveName={getMoveName}
-            moveDetails={moveDetails}
-            onClose={handleCloseModal}
-            handleKeyDown={handleKeyDown}
-          />
-        )}
-      </div>
-    </main>
-  );
+				{selectedMove && moveDetails && (
+					<MoveModal
+						moveName={getMoveName}
+						moveDetails={moveDetails}
+						onClose={handleCloseModal}
+						handleKeyDown={handleKeyDown}
+					/>
+				)}
+			</div>
+		</main>
+	);
 };
 
 export default PokemonDetails;
