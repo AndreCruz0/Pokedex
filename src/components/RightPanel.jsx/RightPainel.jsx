@@ -6,23 +6,34 @@ import SoundIndicators from './SoundIndicators';
 import ControlButtons from './ControlButtons';
 import FunctionPads from './FunctionsPads';
 
-export default function RightPanel({
-	isHidden,
-	filteredPokemons,
-}) {
+export default function RightPanel({ isHidden, filteredPokemons }) {
 	const [shouldRender, setShouldRender] = useState(!isHidden);
-	const [animationClass, setAnimationClass] = useState('flip-in-right');
+	const [animationClass, setAnimationClass] = useState('');
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 620);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 620);
+		};
+		
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	useEffect(() => {
 		if (!isHidden) {
 			setShouldRender(true);
-			setAnimationClass('flip-in-right');
+			setAnimationClass(isMobile ? '' : 'flip-in-right');
 		} else {
-			setAnimationClass('flip-out-left');
-			const timeout = setTimeout(() => setShouldRender(false), 600);
-			return () => clearTimeout(timeout);
+			if (!isMobile) {
+				setAnimationClass('flip-out-left');
+				const timeout = setTimeout(() => setShouldRender(false), 600);
+				return () => clearTimeout(timeout);
+			} else {
+				setShouldRender(false);
+			}
 		}
-	}, [isHidden]);
+	}, [isHidden, isMobile]);
 
 	if (!shouldRender) return null;
 
@@ -33,9 +44,7 @@ export default function RightPanel({
 			<div className="absolute top-2 left-8 right-8 h-1 bg-gradient-to-r from-white/20 via-white/10 to-transparent rounded " />
 			<CylindricalHinge />
 			<InputSearch />
-			<ResultsDisplay
-				filteredPokemons={filteredPokemons}
-			/>
+			<ResultsDisplay filteredPokemons={filteredPokemons} />
 			<SoundIndicators />
 			<ControlButtons />
 			<div className="bg-yellow-400 h-8 w-8 rounded-full absolute bottom-24 right-10 border-2 border-yellow-500 shadow-md hover:bg-yellow-300 transition-colors " />

@@ -15,7 +15,7 @@ export default function LeftPanel({ setIsHidden }) {
 	};
 
 	return (
-		<section className="min-h-[40rem] max-w-full p-10 rounded-[24px] shadow-[0_10px_25px_rgba(0,0,0,0.3)] bgGradient border-2 border-[#111] overflow-hidden">
+		<section className=" bgGradient min-h-[40rem] max-w-full p-10 rounded-[24px] shadow-[0_10px_25px_rgba(0,0,0,0.3)]  border-2 border-[#111] overflow-hidden ">
 			<HeaderSection />
 			<PokedexBackground />
 			<LoadPokemon />

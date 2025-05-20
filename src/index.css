@@ -56,7 +56,9 @@
   100% {
     transform: perspective(1000px) rotateY(0deg);
   }
+  
 }
+
 
 .flip-in-right {
   animation: flip-in-right 0.6s ease-out forwards;
@@ -93,6 +95,8 @@
 }
 
 }
+
+
   html{
   min-width: 370px;
 }

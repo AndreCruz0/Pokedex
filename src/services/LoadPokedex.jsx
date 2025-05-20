@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-
 import { useContext } from 'react';
 import { PokemonInfoContext } from '../context/PokemonData-context';
 import { OffSetContext } from '../context/Offset-context';
@@ -29,12 +28,15 @@ const LoadPokemon = () => {
 		});
 	}
 
+	
+
 	useEffect(() => {
 		async function pokemonsData() {
 			if (offSet === 0 && refCounter.current) return;
 			refCounter.current = true;
 			const pokemonsData = await filterApi();
 			const pokemonsDataFormated = await Promise.all(pokemonsData);
+			
 			setPokemonData(pokemonsDataFormated);
 		}
 		pokemonsData();
@@ -53,6 +55,7 @@ const LoadPokemon = () => {
 		});
 		setFilteredPokemonData(pokemonFiltred);
 	}, [pokemonData]);
+
 	useEffect(() => {
 		setStoredPokemonData((prev) => [...prev, ...filteredPokemonData]);
 		setPokemonInfo((prev) => [...prev, ...filteredPokemonData]);
