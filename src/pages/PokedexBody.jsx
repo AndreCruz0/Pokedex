@@ -7,7 +7,7 @@ import RightPanel from '../components/RightPanel.jsx/RightPainel';
 import { InputValueContext } from '../context/InputValue-context';
 import { ThemeContext } from '../context/Theme-context';
 import ButtonTheme from '../components/ButtonTheme/ButtonTheme';
-import LeftPanel from '../components/LeftPainel/LeftPanel';
+import LeftPanel from '../components/LeftPanel/LeftPanel';
 
 export default function PokedexBody() {
 	const [filteredPokemons, setFilteredPokemons] = useState([]);
