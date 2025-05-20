@@ -1,10 +1,13 @@
 import { useState, useEffect, useContext } from 'react';
 import pokemonInfo from '../assets/pokemonInfo.json';
-import LeftPanel from '../components/LeftPainel.jsx/leftPainel';
+
+
+
 import RightPanel from '../components/RightPanel.jsx/RightPainel';
 import { InputValueContext } from '../context/InputValue-context';
 import { ThemeContext } from '../context/Theme-context';
 import ButtonTheme from '../components/ButtonTheme/ButtonTheme';
+import LeftPanel from '../components/LeftPainel/LeftPanel';
 
 export default function PokedexBody() {
 	const [filteredPokemons, setFilteredPokemons] = useState([]);
