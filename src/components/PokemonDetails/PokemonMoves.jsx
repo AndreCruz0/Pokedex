@@ -3,7 +3,7 @@ export const PokemonMoves = ({ moves, onMoveClick }) => (
 		{moves?.map((move, key) => (
 			<span
 				key={key}
-				className="bg-gray-200 text-gray-800 text-xs font-medium px-3 py-1 rounded-full capitalize cursor-pointer hover:bg-gray-300"
+				className="bg-gray-300 text-gray-800 text-xs font-medium px-3 py-1 rounded-full capitalize cursor-pointer hover:bg-gray-500"
 				onClick={() => onMoveClick(move.move.url)}
 				onKeyDown={() => onMoveClick(move.move.url)}
 			>
