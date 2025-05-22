@@ -1,10 +1,10 @@
-import LoadPokemon from '../../services/LoadPokedex';
+import LoadPokemon from '../../hooks/useLoadPokedex';
 import PokedexBackground from './PokedexBackGround';
 import { useContext } from 'react';
 import HeaderSection from './HeaderSection';
 import DPadSection from './DPadSection';
 import InputSection from './InputSection';
-import { InputValueContext } from '../../context/InputValue-context';
+import { InputValueContext } from '../../context/InputValueContext';
 
 export default function LeftPanel({ setIsHidden }) {
 	const { inputValue, setInputValue } = useContext(InputValueContext);

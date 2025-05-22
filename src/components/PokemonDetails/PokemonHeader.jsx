@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import ImageWithSkeleton from '../Skeleton/ImageWithSkeleton';
 
 export const PokemonHeader = ({ name, image, imageShiny }) => {
@@ -43,4 +44,10 @@ export const PokemonHeader = ({ name, image, imageShiny }) => {
 			/>
 		</div>
 	);
+};
+
+PokemonHeader.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  imageShiny: PropTypes.string.isRequired,
 };

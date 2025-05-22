@@ -1,21 +1,21 @@
 // src/context/AppProvider.jsx
-import { PokemonDataProvider } from '../PokemonData-context';
-import { OffSetProvider } from '../Offset-context';
-import { DetailsProvider } from '../Details-context';
-import { FIlterProvider } from '../Filter-context';
-import { InputValueProvider } from '../InputValue-context';
-import { ThemeProvider } from '../Theme-context';
+import { PokemonDataProvider } from '../PokemonDataContext';
+import { OffSetProvider } from '../OffsetContext';
+import { DetailsProvider } from '../DetailsContext';
+import { FilterProvider } from '../FilterContext';
+import { InputValueProvider } from '../InputValueContext';
+import { ThemeProvider } from '../ThemeContext';
 
 export const AppProvider = ({ children }) => {
 	return (
 		<ThemeProvider>
 			<PokemonDataProvider>
 				<InputValueProvider>
-					<FIlterProvider>
+					<FilterProvider>
 						<OffSetProvider>
 							<DetailsProvider>{children}</DetailsProvider>
 						</OffSetProvider>
-					</FIlterProvider>
+					</FilterProvider>
 				</InputValueProvider>
 			</PokemonDataProvider>
 		</ThemeProvider>

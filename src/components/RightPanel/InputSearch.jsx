@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { InputValueContext } from '../../context/InputValue-context';
+import { InputValueContext } from '../../context/InputValueContext';
 export default function InputSearch({ setInputValue }) {
 	const { inputValue } = useContext(InputValueContext);
 

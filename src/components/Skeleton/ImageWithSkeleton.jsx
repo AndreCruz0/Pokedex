@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Skeleton from './Skeleton';
 import ImageSkeletonSvg from './ImageSkeletonSvg';
 
@@ -62,3 +63,11 @@ export default function ImageWithSkeleton({
 		</>
 	);
 }
+
+ImageWithSkeleton.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  className: PropTypes.string,
+};
