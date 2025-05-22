@@ -3,9 +3,9 @@ import pokemonInfo from '../assets/pokemonInfo.json';
 
 
 
-import RightPanel from '../components/RightPanel.jsx/RightPainel';
-import { InputValueContext } from '../context/InputValue-context';
-import { ThemeContext } from '../context/Theme-context';
+import RightPanel from '../components/RightPanel/RightPainel';
+import { InputValueContext } from '../context/InputValueContext';
+import { ThemeContext } from '../context/ThemeContext';
 import ButtonTheme from '../components/ButtonTheme/ButtonTheme';
 import LeftPanel from '../components/LeftPanel/LeftPanel';
 

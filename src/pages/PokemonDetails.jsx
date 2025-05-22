@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { DetailsContext } from '../context/Details-context';
-import { ThemeContext } from '../context/Theme-context';
+import { DetailsContext } from '../context/DetailsContext';
+import { ThemeContext } from '../context/ThemeContext';
 import { PokemonHeader } from '../components/PokemonDetails/PokemonHeader';
-import LoadDetails from '../services/LoadDetails';
+import LoadDetails from '../hooks/useLoadDetails';
 import { PokemonAbilities } from '../components/PokemonDetails/PokemonAbilities';
 import { PokemonMoves } from '../components/PokemonDetails/PokemonMoves';
 import { PokemonTypes } from '../components/PokemonDetails/PokemonTypes';
