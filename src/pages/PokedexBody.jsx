@@ -3,7 +3,7 @@ import pokemonInfo from '../assets/pokemonInfo.json';
 
 
 
-import RightPanel from '../components/RightPanel.jsx/RightPainel';
+import RightPanel from '../components/RightPanel/RightPainel';
 import { InputValueContext } from '../context/InputValue-context';
 import { ThemeContext } from '../context/Theme-context';
 import ButtonTheme from '../components/ButtonTheme/ButtonTheme';
