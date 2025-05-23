@@ -29,7 +29,7 @@ export default function PokedexBody() {
 
 	return (
 		<main
-			className={`flex sm:flex-row flex-col justify-center items-center gap-2 p-4 min-h-screen sm:items-start
+			className={`flex sm:flex-row flex-col justify-center items-center gap-2 p-4 min-h-screen sm:items-center lg:items-center md:items-center
       ${theme === 'dark' ? 'bg-[#121212] text-white' : 'bg-[#f3f3f3] text-black'}`}
 		>
 			<ButtonTheme />

@@ -82,6 +82,10 @@
   backface-visibility: hidden;
 }
 
+  main{
+  min-width: 370px !important;
+}
+  
   
   @keyframes pulsate {
   0%, 100% {
@@ -96,8 +100,3 @@
 
 }
 
-
-  html{
-  min-width: 370px;
-}
-  
