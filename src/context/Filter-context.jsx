@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 export const FilterContext = createContext();
 
-export const FIlterProvider = ({ children }) => {
+export const FilterProvider = ({ children }) => {
 	const [filter, setFilter] = useState(0);
 	return (
 		<FilterContext.Provider value={{ filter, setFilter }}>
